@@ -36,7 +36,7 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Sync S3 bucket
-        run: aws s3 sync ./dist s3://langmatch-front --delete
+        run: aws s3 sync ./dist s3://langmatchs-front --delete
 
       - name: Invalidate CloudFront cache
-        run: aws cloudfront create-invalidation --distribution-id E19D3NLR44DU8A --paths "/*"
+        run: aws cloudfront create-invalidation --distribution-id E1YDYI7AT8R2TV --paths "/*"
